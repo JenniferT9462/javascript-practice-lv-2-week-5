@@ -46,7 +46,15 @@ fetchBerryById(1);
 // Log the ability name and effect to the console.
 
 // TODO: Write your function here
-
+async function fetchAbilityById(abilityId) {
+  const url = `https://pokeapi.co/api/v2/ability/${abilityId}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(`Ability Name:  ${data.name}`);
+  console.log(`Ability Effect:  ${data.effect_entries[1]}`);
+  
+}
+fetchAbilityById(1);
 // EXERCISE 2: Fetch Item Data by ID
 
 // INSTRUCTIONS:
@@ -54,6 +62,15 @@ fetchBerryById(1);
 // Log the item name and its category to the console.
 
 // TODO: Write your function here
+async function fetchItemById(itemId) {
+  const url = `https://pokeapi.co/api/v2/item/${itemId}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(`Item Name: ${data.name}`);
+  console.log(`Item Category: ${data.category}`);
+  
+}
+fetchItemById(1);
 
 // EXERCISE 3: Fetch Type Data by ID
 
@@ -70,6 +87,15 @@ fetchBerryById(1);
 // Log the nature name and its characteristics to the console.
 
 // TODO: Write your function here
+async function fetchTypeById(typeId) {
+  const url = `https://pokeapi.co/api/v2/type/${typeId}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(`Type Name: ${data.name}`);
+  console.log(`Type Characteristics: ${data.characteristics}`);
+  
+}
+fetchTypeById(1);
 
 // EXERCISE 5: Fetch Pokémon Data by IDs and print the abilities of the pokemon.
 
@@ -78,6 +104,15 @@ fetchBerryById(1);
 // print the name of the pokemon and the abilities of the pokemon.
 // Hint: abilities is an array.
 // TODO: Write your function here
+async function fetchPokemonByIds2(pokemonId) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(`Pokemon Name: ${data.name}`);
+  console.log(`Abilities: ${data.abilities}`);
+  
+}
+fetchPokemonByIds2(1);
 
 // Summary:
 // These exercises help you practice creating functions to fetch data by ID from various endpoints of the Pokémon API.
