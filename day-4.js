@@ -99,8 +99,8 @@ async function fetchNatureById(natureId) {
   const url = `https://pokeapi.co/api/v2/nature/${natureId}`;
   const response = await fetch(url);
   const data = await response.json();
-  console.log(`Type Name: ${data.name}`);
-  console.log(`Type Characteristics: `, data.nature);
+  console.log(`Nature Name: ${data.name}`);
+  console.log(`Nature Characteristics: ${data.nature}`);//???
   
 }
 fetchNatureById(1);
