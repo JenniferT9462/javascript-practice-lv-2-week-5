@@ -108,7 +108,7 @@ async function getFirstItem() {
   const data = await response.json();
   
   console.log('First Item Name: ', data.name);
-  console.log('First Item Color: ', data.color);//Can't seem to get this to find a color
+  console.log('First Item Color: ', data.cost);//Can't seem to get this to find a color
   
 }
 getFirstItem();
