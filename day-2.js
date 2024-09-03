@@ -128,7 +128,9 @@ async function getEeveeData() {
   const response = await fetch(url);
   const data = await response.json();
   console.log('Name: ', data.name);
-  console.log('Abilities: ', data.abilities);
+  for(let i = 0; i < data.abilities.length; i++) {
+    console.log(`Ability Name: ${data.abilities[i].ability.name}`)
+  }
 }
 getEeveeData();
 
