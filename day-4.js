@@ -70,7 +70,7 @@ async function fetchItemById(itemId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Item Name: ${data.name}`);
-  console.log(`Item Category:`,  data.category);
+  console.log(`Item Category:`,  data.category.name);
   
 }
 fetchItemById(12);
@@ -103,10 +103,10 @@ async function fetchNatureById(natureId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Nature Name: ${data.name}`);
-  console.log(`Nature Characteristics: ${data.nature}`);//???
+  console.log(`Nature Characteristics: `, data.likes_flavor.name);//???
   
 }
-fetchNatureById(1);
+fetchNatureById(24);
 
 // EXERCISE 5: Fetch Pokémon Data by IDs and print the abilities of the pokemon.
 
