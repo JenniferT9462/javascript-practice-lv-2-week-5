@@ -32,7 +32,10 @@ async function fetchBerryById(berryId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Berry Name: ${data.name}`);
-  console.log(`Flavors: `, data.flavors);
+  // console.log(`Flavors: ${data.flavor}`);
+  for (let i=0;i<data.flavors.length; i++) {
+    console.log(`Flavor: ${data.flavors[i].flavor.name}`)
+  }
 }
 
 // Fetch and log data for Berry with ID 1
@@ -117,7 +120,7 @@ async function fetchPokemonByIds2(pokemonId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Pokemon Name: ${data.name}`);
-  console.log(`Abilities: `, data.abilities);
+  
   
 }
 fetchPokemonByIds2(1);
