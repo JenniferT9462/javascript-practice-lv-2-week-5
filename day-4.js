@@ -34,7 +34,7 @@ async function fetchBerryById(berryId) {
   console.log(`Berry Name: ${data.name}`);
   // console.log(`Flavors: ${data.flavor}`);
   for (let i=0;i<data.flavors.length; i++) {
-    console.log(`Flavor: ${data.flavors[i].flavor.name}`)
+    console.log(`Berry Flavor: ${data.flavors[i].flavor.name}`)
   }
 }
 
@@ -54,7 +54,7 @@ async function fetchAbilityById(abilityId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Ability Name:  ${data.name}`);
-  console.log(`Ability Effect:`,  data.effect_entries[1]);
+  console.log(`Ability Effect:`,  data.effect_entries[1].effect);
   
 }
 fetchAbilityById(1);
@@ -87,7 +87,13 @@ async function fetchTypeById(typeId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Type Name: ${data.name}`);
-  console.log(`Damage Relations: `, data.damage_relations);
+  // console.log(`Damage Relations: `, data.damage_relations);
+  const damRel = data.damage_relations;
+  console.log(`Damage Relations:`, Object.keys(damRel));
+  // console.log(`Type Damage Relations:`, Object.keys(data));
+  // for(let i=0;i<data.damage_relations.length; i++) {
+  //   console.log('Type Damage Relation: ', data.damage_relations[i].damage_relations.name)
+  // }
 }
 fetchTypeById(1)
 
@@ -103,10 +109,20 @@ async function fetchNatureById(natureId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Nature Name: ${data.name}`);
-  console.log(`Nature Characteristics: `, data.likes_flavor.name);//???
+  // console.log(`Nature Characteristics: `, data.move_battle_style_preferences);
+  // for (let i=0; i<data.names.length; i++) {
+  //   console.log('Nature names: ' , data.names[i].language.name);
+  // }
+  // for (let i = 0; i < data.pokeathlon_stat_changes.length; i++) {
+  //   console.log('Nature Stats: ', data.pokeathlon_stat_changes[i].pokeathlon_stat.name)
+  // }
+  // for (let i=0; i<data.move_battle_style_preferences.length; i++) {
+  //    console.log('Nature Battle Styles: ' , data.move_battle_style_preferences[i].move_battle_style.name);
+  // }
+  console.log(`Nature Characteristics:`, Object.keys(data));
   
 }
-fetchNatureById(24);
+fetchNatureById(1);
 
 // EXERCISE 5: Fetch Pokémon Data by IDs and print the abilities of the pokemon.
 
