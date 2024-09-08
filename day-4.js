@@ -16,6 +16,7 @@ async function fetchPokemonById(pokemonId) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExample 1:');
   console.log(`Pokémon Name:  ${data.name}`);
   console.log(`Height: ${data.height}`);
 }
@@ -31,6 +32,7 @@ async function fetchBerryById(berryId) {
   const url = `https://pokeapi.co/api/v2/berry/${berryId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExample 2:');
   console.log(`Berry Name: ${data.name}`);
   // console.log(`Flavors: ${data.flavor}`);
   for (let i=0;i<data.flavors.length; i++) {
@@ -53,6 +55,7 @@ async function fetchAbilityById(abilityId) {
   const url = `https://pokeapi.co/api/v2/ability/${abilityId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 1:');
   console.log(`Ability Name:  ${data.name}`);
   console.log(`Ability Effect:`,  data.effect_entries[1].effect);
   
@@ -69,11 +72,12 @@ async function fetchItemById(itemId) {
   const url = `https://pokeapi.co/api/v2/item/${itemId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 2:');
   console.log(`Item Name: ${data.name}`);
   console.log(`Item Category:`,  data.category.name);
   
 }
-fetchItemById(12);
+fetchItemById(1);
 
 // EXERCISE 3: Fetch Type Data by ID
 
@@ -86,16 +90,14 @@ async function fetchTypeById(typeId) {
   const url = `https://pokeapi.co/api/v2/type/${typeId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 3:');
   console.log(`Type Name: ${data.name}`);
-  // console.log(`Damage Relations: `, data.damage_relations);
-  const damRel = data.damage_relations;
-  console.log(`Damage Relations:`, Object.keys(damRel));
+  console.log(`Damage Relations - double damage from: `, data.damage_relations.double_damage_from[0].name);
+  console.log(`Damage Relations - half damage to: `, data.damage_relations.half_damage_to[0].name);
   // console.log(`Type Damage Relations:`, Object.keys(data));
-  // for(let i=0;i<data.damage_relations.length; i++) {
-  //   console.log('Type Damage Relation: ', data.damage_relations[i].damage_relations.name)
-  // }
+  
 }
-fetchTypeById(1)
+fetchTypeById(1);
 
 // EXERCISE 4: Fetch Nature Data by ID
 
@@ -108,19 +110,15 @@ async function fetchNatureById(natureId) {
   const url = `https://pokeapi.co/api/v2/nature/${natureId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 4:');
   console.log(`Nature Name: ${data.name}`);
-  // console.log(`Nature Characteristics: `, data.move_battle_style_preferences);
-  // for (let i=0; i<data.names.length; i++) {
-  //   console.log('Nature names: ' , data.names[i].language.name);
-  // }
-  // for (let i = 0; i < data.pokeathlon_stat_changes.length; i++) {
-  //   console.log('Nature Stats: ', data.pokeathlon_stat_changes[i].pokeathlon_stat.name)
-  // }
-  // for (let i=0; i<data.move_battle_style_preferences.length; i++) {
-  //    console.log('Nature Battle Styles: ' , data.move_battle_style_preferences[i].move_battle_style.name);
-  // }
-  console.log(`Nature Characteristics:`, Object.keys(data));
-  
+  // console.log(`Nature Characteristics:`, Object.keys(data));
+  for (let i = 0; i < data.pokeathlon_stat_changes.length; i++) {
+    console.log('Nature Stats: ', data.pokeathlon_stat_changes[i].pokeathlon_stat.name)
+  }
+  for (let i=0; i<data.move_battle_style_preferences.length; i++) {
+     console.log('Nature Battle Styles: ' , data.move_battle_style_preferences[i].move_battle_style.name);
+  }
 }
 fetchNatureById(1);
 
@@ -135,11 +133,13 @@ async function fetchPokemonByIds2(pokemonId) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 5:');
   console.log(`Pokemon Name: ${data.name}`);
-  
-  
+  for (let i = 0; i < data.abilities.length; i++) {
+    console.log('Ability Name: ', data.abilities[i].ability.name)
+  }
 }
-fetchPokemonByIds2(1);
+fetchPokemonByIds2(25);
 
 // Summary:
 // These exercises help you practice creating functions to fetch data by ID from various endpoints of the Pokémon API.

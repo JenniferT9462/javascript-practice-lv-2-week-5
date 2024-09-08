@@ -18,6 +18,7 @@ async function getBulbasaurData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/1'; // Bulbasaur's ID is 1
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExample 1:');
   console.log('Name:', data.name);
   console.log('Height:', data.height);
 }
@@ -32,6 +33,7 @@ async function getCharmanderData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/4'; // Charmander's ID is 4
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExample 2:');
   console.log('Name:', data.name);
   console.log('Weight:', data.weight);
 }
@@ -52,6 +54,7 @@ async function getSquirtleData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/7'; // Squirtle's ID is 7
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 1:');
   console.log('Name: ', data.name);
   console.log('Base-experience: ', data.base_experience);
   
@@ -70,8 +73,9 @@ async function getPikachuData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/25'
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 2:');
   console.log('Name: ', data.name);
-  console.log('Types: ', data.types);
+  console.log('Type: ', data.types[0].type.name);
   
 }
 getPikachuData();
@@ -88,6 +92,7 @@ async function getJigglypuffData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/39';
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 3:');
   console.log('Name: ', data.name);
   console.log('Weight: ', data.weight)
   
@@ -106,6 +111,7 @@ async function getMeowthData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/52';
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 4:');
   console.log('Name: ', data.name);
   console.log('Height', data.height);
   console.log('Weight: ', data.weight);
@@ -127,6 +133,7 @@ async function getEeveeData() {
   const url = 'https://pokeapi.co/api/v2/pokemon/133';
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 5:');
   console.log('Name: ', data.name);
   for(let i = 0; i < data.abilities.length; i++) {
     console.log(`Ability Name: ${data.abilities[i].ability.name}`)

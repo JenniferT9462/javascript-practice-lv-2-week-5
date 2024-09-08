@@ -16,6 +16,7 @@ async function getFirstPokemonName() {
   const url = 'https://pokeapi.co/api/v2/pokemon/1'; // Fetching data for Bulbasaur, the first Pokémon
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExample 1:');
   console.log('First Pokémon Name:', data.name);
 }
 
@@ -30,6 +31,7 @@ async function getFirstBerryName() {
   const url = 'https://pokeapi.co/api/v2/berry/1'; // Fetching data for the first Berry
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExample 2:');
   console.log('First Berry Name:', data.name);
 }
 
@@ -49,6 +51,7 @@ async function getSecondPokemonName() {
   const url = 'https://pokeapi.co/api/v2/pokemon/2';
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 1:');
   console.log('Second Pokemon Name: ', data.name);
   
 }
@@ -67,6 +70,7 @@ async function getFirstBerryFlavor() {
   const url = 'https://pokeapi.co/api/v2/berry/1';
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 2:');
   // console.log('Second Berry Flavors: ', data.flavors);
   for (let i=0;i<data.flavors.length; i++) {
     console.log(`Flavor: ${data.flavors[i].flavor.name}`)
@@ -86,11 +90,9 @@ async function getFirstAbility() {
   const url = 'https://pokeapi.co/api/v2/ability/1';
   const response = await fetch(url);
   const data = await response.json();
-  
-  
+  console.log('\nExercise 3:');
   console.log('First Ability Name: ', data.name);
-  console.log('First Ability Effect: ', data.effect_entries[1]); //I first logged the whole data array to find the property and index of the effects
-  
+  console.log('First Ability Effect: ', data.effect_entries[1].effect); //I first logged the whole data array to find the property and index of the effects
 }
 getFirstAbility();
 
@@ -106,9 +108,9 @@ async function getFirstItem() {
   const url = 'https://pokeapi.co/api/v2/item/1';
   const response = await fetch(url);
   const data = await response.json();
-  
+  console.log('\nExercise 4:');
   console.log('First Item Name: ', data.name);
-  console.log('First Item Color: ', data.cost);//Can't seem to get this to find a color
+  console.log('First Item Cost: ', data.cost);//Can't seem to get this to find a color
   
 }
 getFirstItem();
@@ -126,6 +128,7 @@ async function getFirstType() {
   const url = 'https://pokeapi.co/api/v2/type/1';
   const response = await fetch(url);
   const data = await response.json();
+  console.log('\nExercise 5:');
   console.log('First Type Name: ', data.name);
 }
 getFirstType();
